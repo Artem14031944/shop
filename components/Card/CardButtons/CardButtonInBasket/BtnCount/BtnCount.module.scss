@@ -1,0 +1,24 @@
+.btnCount {
+    z-index: 1;
+    width: 119px;
+    height: 40px;
+    border-radius: 90px;
+    background: var(--color-gray-white);
+    margin-left: -40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+
+    .btnMinus,
+    .btnPlust {
+        cursor: pointer;
+    }
+
+    .textCount {
+        margin: 0 8px;
+        width: 16px;
+        display: flex;
+        justify-content: center;
+    }
+}

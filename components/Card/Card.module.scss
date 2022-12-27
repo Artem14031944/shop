@@ -1,3 +1,24 @@
 .card {
-  color: red;
+  position: relative;
+  width: 332px;
+  height: 462px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #F5F5F7;
+  
+  .cardInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    margin-bottom: 3px;
+  }
+
+  .priceAndLike {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 13px;
+  }
 }

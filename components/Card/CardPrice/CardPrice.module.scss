@@ -1,0 +1,13 @@
+.price {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 20px;
+    color: var(--color-black);
+    margin-top: 12px;
+
+    span {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--color-gray);
+    }
+}

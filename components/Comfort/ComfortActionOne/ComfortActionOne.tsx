@@ -1,5 +1,5 @@
 import React from 'react';
-import img_room from '../../../assets/icon/roomOne.svg';
+import img_room from '../../../public/roomOne.svg';
 import Image from 'next/image';
 import styles from './ComfortActionOne.module.scss';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import icon_arrow from '../../../assets/icon/arrow.svg';
+import icon_arrow from '../../../public/arrow.svg';
 import Image from 'next/image';
 import styles from './ComfortTtitle.module.scss';
 

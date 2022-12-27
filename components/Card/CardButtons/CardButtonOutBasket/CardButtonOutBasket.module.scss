@@ -1,0 +1,16 @@
+.btnBasket {
+    width: 175px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 90px;
+    color: var(--color-white);
+    background: var(--color-green);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.btnBasket:active {
+    outline: none;
+}

@@ -1,0 +1,12 @@
+.rating {
+    display: flex;
+    align-items: center;
+
+    .reviews {
+        font-size: 12px;
+        line-height: 14px;
+        color: var( --color-gray);
+        margin-left: 4px;
+        text-decoration: underline;
+    }
+}

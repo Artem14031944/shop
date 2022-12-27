@@ -1,0 +1,27 @@
+.blockBtn {
+    display: flex;
+    align-items: center;
+
+    .btn {
+        z-index: 10;
+        width: 100px;
+        height: 40px;
+        border-radius: 90px;
+        border: none;
+        color: var(--color-white);
+        background: var(--color-blue);
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    .btnCount {
+        z-index: 1;
+        width: 119px;
+        height: 40px;
+        border-radius: 90px;
+        background: var(--color-gray-white);
+        margin-left: -40px;
+    }
+}

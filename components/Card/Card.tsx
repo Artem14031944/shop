@@ -34,29 +34,26 @@ const Card: FC<ICard> = ({card}) => {
   const[isBasket, setBasket] = useState(false);
   const[isLike, setLike] = useState(false);
   const[count, setCount] = useState(1);
+  const[countArr, setCountArr] = useState([1,2,3,4])
 
   console.log(card, 'card')
+  // console.log(count, 'count')
 
   const {
-    image, 
-    category,
-    description,
-    price,
-    rating,
-    title,
+    image, category, id,
+    price, rating, title,
   } = card;
 
-  console.log(card.rating.count,  "count")
 
   return (
     <div className={styles.card}>
-      {card.rating.count > 300 && <CardHit/>} 
+      {card.rating.count > 300 && <CardHit />} 
       <CardImgGoods image={image}/>
       <div className={styles.cardInfo}>
-        <CardCategory category={category}/>
+        <CardCategory category={category} />
         <CardRating rating={rating}/>
       </div>
-      <CardDescription description={title}/>
+      <CardDescription description={title} />
       <CardPrice price={price}/>
       <div className={styles.priceAndLike}>
         {isBasket ? 
@@ -68,11 +65,23 @@ const Card: FC<ICard> = ({card}) => {
             setCount={setCount}  
           />}
         {isLike ? 
-          <CardLike isLike={isLike} setLike={setLike} /> 
-        : <CardNotLike isLike={isLike} setLike={setLike} />}
+          <CardLike 
+            id={id}
+            isLike={isLike} 
+            setLike={setLike} 
+            countArr={countArr}
+            setCountArr={setCountArr} 
+          /> 
+        : <CardNotLike 
+            id={id}
+            isLike={isLike} 
+            setLike={setLike} 
+            countArr={countArr}
+            setCountArr={setCountArr} 
+          />}
       </div>
     </div>
-  )
+  );
 };
 
 export default Card;

@@ -13,7 +13,7 @@ const Products = () => {
         axios.get(`https://fakestoreapi.com/products?limit=${countProductm}`)
         .then(({data}) => setProducts(data))
         .catch(err => console.log(err))
-      }, [])
+    }, []);
 
 
     return (
@@ -27,7 +27,7 @@ const Products = () => {
                 )
             })}
         </div>
-    )
+    );
 };
 
 export default Products;

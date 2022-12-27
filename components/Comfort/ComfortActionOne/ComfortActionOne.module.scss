@@ -1,0 +1,56 @@
+.contaner {
+    display: flex;
+    align-items: center;
+    margin-top: 34px;
+
+    .boxAction {
+        background: var(--color-gray-dark);
+        width: 185px;
+        height: 140px;
+        padding: 23px 0 0 20px;
+
+        .figureAction {
+            width: 71px;
+            height: 24px;
+            -webkit-transform: skew(322deg);
+            -moz-transform: skew(322deg);
+            -o-transform: skew(322deg);
+            background: var(--color-yelow);
+
+           
+
+            .figureActionText {
+                -webkit-transform: skew(37deg);
+                -moz-transform: skew(37deg);
+                -o-transform: skew(37deg);
+                font-weight: 700;
+                text-align: center;
+                padding-top: 3px;
+            }
+        }
+
+        .actionText {
+            color: var(--color-white);
+            font-size: 15px;
+            padding: 5px 0;
+        }
+
+        .actionBtn {
+            background: transparent;
+            border: none;
+            color: var(--color-white);
+            transition: color .3s;
+        }
+
+        .actionBtn:hover {
+            cursor: pointer;
+            color: var(--color-yelow);
+            transition: color .3s;
+        }
+
+        .actionBtn:active {
+            outline: none;
+        }
+
+    }
+}

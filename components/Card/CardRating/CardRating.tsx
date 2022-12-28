@@ -37,9 +37,9 @@ const CardRating:FC<IRating> = ({rating}) => {
 
     return (
         <div className={styles.rating}>
-            {createStars(rating.rate)}
+            {createStars(rating?.rate)}
             <p className={styles.reviews}>
-                {rating.count}отзыва
+                {rating?.count}отзыва
             </p>
         </div>
     )

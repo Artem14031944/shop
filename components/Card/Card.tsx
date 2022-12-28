@@ -13,6 +13,7 @@ import styles from './Card.module.scss';
 
 export interface IitemCard {
   id: number,
+  like: boolean,
   category: string,
   description: string,  
   image: string,
@@ -24,37 +25,36 @@ export interface IitemCard {
   },
 };
 
-interface ICard {
-  card: IitemCard
+export interface ICard {
+  card: IitemCard,
 };
 
 
 const Card: FC<ICard> = ({card}) => {
 
-  const[isBasket, setBasket] = useState(false);
-  const[isLike, setLike] = useState(false);
-  const[count, setCount] = useState(1);
-  const[countArr, setCountArr] = useState([1,2,3,4])
-
-  console.log(card, 'card')
-  // console.log(count, 'count')
-
   const {
-    image, category, id,
+    image, category, like, id,
     price, rating, title,
   } = card;
 
+  const[isBasket, setBasket] = useState(false);
+  const[isLike, setLike] = useState(like);
+  const[count, setCount] = useState(1);
 
+  // console.log(card, 'card')
+  // console.log(like, id, 'like')
+
+    
   return (
     <div className={styles.card}>
-      {card.rating.count > 300 && <CardHit />} 
-      <CardImgGoods image={image}/>
+      {card?.rating?.count > 300 && <CardHit />} 
+      <CardImgGoods image={image} />
       <div className={styles.cardInfo}>
         <CardCategory category={category} />
-        <CardRating rating={rating}/>
+        <CardRating rating={rating} />
       </div>
       <CardDescription description={title} />
-      <CardPrice price={price}/>
+      <CardPrice price={price} />
       <div className={styles.priceAndLike}>
         {isBasket ? 
           <CardButtonOutBasket isBasket={isBasket} setBasket={setBasket} /> 
@@ -65,20 +65,8 @@ const Card: FC<ICard> = ({card}) => {
             setCount={setCount}  
           />}
         {isLike ? 
-          <CardLike 
-            id={id}
-            isLike={isLike} 
-            setLike={setLike} 
-            countArr={countArr}
-            setCountArr={setCountArr} 
-          /> 
-        : <CardNotLike 
-            id={id}
-            isLike={isLike} 
-            setLike={setLike} 
-            countArr={countArr}
-            setCountArr={setCountArr} 
-          />}
+          <CardLike isLike={isLike} like={like} setLike={setLike} /> 
+        : <CardNotLike isLike={isLike} like={like} setLike={setLike} />}
       </div>
     </div>
   );

@@ -4,32 +4,26 @@ import icon_like from '../../../../public/likeActive.svg'
 import styles from './CardLike.module.scss';
 
 interface ILike {
-  id:number;
+  like: boolean;
   isLike: boolean;
   setLike: (isLike: boolean) => void;
-  countArr: any;
-  setCountArr: any;
 };
 
 
-const CardLike: FC<ILike> = ({
-  isLike, 
-  setLike, 
-  countArr, 
-  setCountArr, 
-  id
-}) => {
+const CardLike: FC<ILike> = ({ isLike, setLike, like }) => {
 
-  const addId = (id: number) => {
-    const removeArr = countArr.filter((item: number) => item !== id);
-    setCountArr(removeArr);
+  like = true
+  console.log(like, 'like')
+
+  const handlerLike = () => {
     setLike(!isLike);
+    return like = true;
   };
 
   return (
     <Image
       className={styles.icon}
-      onClick={()=> addId(id)}
+      onClick={handlerLike}
       src={icon_like}
       alt={"icon_like"}
       width={40}

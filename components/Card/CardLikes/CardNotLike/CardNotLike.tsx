@@ -4,31 +4,27 @@ import icon_notLike from '../../../../public/like.svg'
 import styles from './CardNotLike.module.scss';
 
 interface INotLike {
-  id:number;
+  like: boolean;
   isLike: boolean;
   setLike: (isLike: boolean) => void;
-  countArr: any;
-  setCountArr: any;
 };
 
 
-const CardNotLike:FC<INotLike> = ({ 
-  isLike, 
-  setLike, 
-  countArr, 
-  setCountArr, 
-  id
-}) => {
+const CardNotLike :FC<INotLike> = ({ isLike, setLike, like }) => {
 
-  const removeId = (id: number) => {
-    setCountArr([...countArr, id]);
+  
+  like = false
+  console.log(like, 'like')
+
+  const handlerLike = () => {
     setLike(!isLike);
+    return like = false;
   };
-
+ 
   return (
     <Image
       className={styles.icon}
-      onClick={()=> removeId(id)}
+      onClick={handlerLike}
       src={icon_notLike}
       alt={"icon_notLike"}
       width={40}

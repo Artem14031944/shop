@@ -9,6 +9,13 @@ const Products = () => {
     const [products, setProducts] = useState([]);
     const [countProductm, setCountProduct] = useState(9);
 
+
+    const newProductArray = products.map((item: IitemCard) => { 
+        let product: IitemCard = Object.assign({}, item);
+            product.like = false;
+            return product;
+    });
+
     useEffect(() => {
         axios.get(`https://fakestoreapi.com/products?limit=${countProductm}`)
         .then(({data}) => setProducts(data))
@@ -16,13 +23,20 @@ const Products = () => {
     }, []);
 
 
+    useEffect(() => {
+        localStorage.setItem('data', JSON.stringify(newProductArray))
+    }, [newProductArray]);
+
+
+    console.log(newProductArray, 'newProductArray')
+
     return (
         <div className={styles.products}>
             <Comfort/>
-            {products?.map((product: IitemCard) => {
+            {newProductArray?.map((product: IitemCard) => {
                 return (
                     <div key={product.id}>
-                        <Card card={product}/>
+                        <Card card={product} />
                     </div>
                 )
             })}

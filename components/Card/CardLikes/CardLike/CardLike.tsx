@@ -12,9 +12,6 @@ interface ILike {
 
 const CardLike: FC<ILike> = ({ isLike, setLike, like }) => {
 
-  like = true
-  console.log(like, 'like')
-
   const handlerLike = () => {
     setLike(!isLike);
     return like = true;

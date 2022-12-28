@@ -41,9 +41,6 @@ const Card: FC<ICard> = ({card}) => {
   const[isLike, setLike] = useState(like);
   const[count, setCount] = useState(1);
 
-  // console.log(card, 'card')
-  // console.log(like, id, 'like')
-
     
   return (
     <div className={styles.card}>

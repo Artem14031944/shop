@@ -27,9 +27,6 @@ const Products = () => {
         localStorage.setItem('data', JSON.stringify(newProductArray))
     }, [newProductArray]);
 
-
-    console.log(newProductArray, 'newProductArray')
-
     return (
         <div className={styles.products}>
             <Comfort/>

@@ -12,10 +12,6 @@ interface INotLike {
 
 const CardNotLike :FC<INotLike> = ({ isLike, setLike, like }) => {
 
-  
-  like = false
-  console.log(like, 'like')
-
   const handlerLike = () => {
     setLike(!isLike);
     return like = false;
